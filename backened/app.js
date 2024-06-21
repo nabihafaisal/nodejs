@@ -2,7 +2,8 @@
 const express = require('express')
 const cors = require('cors')
 const { db } = require('./DB/db')
-const {readdirSync}=require('fs');
+const { readdirSync } = require('fs');
+const { route } = require('./ROUTES/transaction');
 
 
 const app = express();
@@ -16,10 +17,11 @@ app.use(express.json())
 app.use(cors())
 //routes
 
-readdirSync('./backened/ROUTES').map((file) => {
-    const route = require('./backened/ROUTES/' + file);
+readdirSync('./ROUTES').map((file) => {
+    const route = require('./ROUTES/' + file);
     app.use('/api/v1', route);
 });
+
 const server = () => {
 
     db()

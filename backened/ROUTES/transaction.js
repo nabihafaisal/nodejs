@@ -1,7 +1,10 @@
-const router=require('express').Router()
+const {addIncome} = require ('../controllers/income');
+const router= require('express').Router()
 
-router.get('/',(req,resp)=>{
-    resp.send('hello world')
-})
+
+router.post('/add-income' , addIncome)
 
 module.exports=router
+
+
+module.exports= router
