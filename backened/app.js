@@ -3,7 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const { db } = require('./DB/db')
 const { readdirSync } = require('fs');
-const { route } = require('./ROUTES/transaction');
+// const { router } = require('./ROUTES/transaction');
 
 
 const app = express();
