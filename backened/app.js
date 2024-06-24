@@ -13,8 +13,9 @@ require('dotenv').config()
 const PORT = process.env.PORT
 
 //middlewares
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
+
 //routes
 
 readdirSync('./ROUTES').map((file) => {
