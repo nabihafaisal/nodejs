@@ -5,7 +5,14 @@ import { InnerLayout } from "../../styles/Layoutes";
 function Dashboard() {
     return (
         <DashboardStyled>
-         <InnerLayout></InnerLayout>
+         <InnerLayout> 
+            <h1>All Transactions</h1>
+            <div className="stats-con">
+                <div className="chart-con"></div>
+            </div>
+
+        
+         </InnerLayout>
         </DashboardStyled>
     )
 }
