@@ -36,6 +36,49 @@ export const GlobalProvider = ({ children }) => {
         const res  = await axios.delete(`${BASE_URL}delete-income/${id}`)
         getIncomes()
     }
+    const totalIncome = () => {
+        let totalIncome = 0;
+        incomes.forEach((income) =>{
+            totalIncome = totalIncome + income.amount
+        })
+
+        return totalIncome;
+    }
+
+
+    const addExpense = async (income) => {
+        try {
+            const response = await axios.post(`${BASE_URL}add-expense`, income);
+            // handle response if necessary
+            getExpense();
+        } catch (err) {
+            setError(err.response ? err.response.data.message : 'An unexpected error occurred');
+        }
+    }
+
+    const getExpense = useCallback(async () => {
+        try {
+            // eslint-disable-next-line
+            const response = await axios.get(`${BASE_URL}get-expense`);
+            setExpenses(response.data);
+            console.log(response.data);
+        } catch (err) {
+            setError(err.response ? err.response.data.message : err.message);
+        }
+    }, []); 
+
+    const deleteExpense = async (id) => {
+        const res  = await axios.delete(`${BASE_URL}delete-expense/${id}`)
+        getExpense()
+    }
+    const totalExpense = () => {
+        let totalIncome = 0;
+        expenses.forEach((income) =>{
+            totalIncome = totalIncome + income.amount
+        })
+
+        return totalIncome;
+    }
     
 
     return (
@@ -44,7 +87,13 @@ export const GlobalProvider = ({ children }) => {
             getIncomes,
             incomes,
             error,
-            deleteIncome
+            deleteIncome,
+            expenses,
+            totalIncome,
+            addExpense,
+            getExpense,
+            deleteExpense,
+            totalExpense
         }}>
             {children}
         </GlobalContext.Provider>

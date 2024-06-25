@@ -37,17 +37,31 @@ exports.getExpense = async (req, res) => {
     }
 
 }
-
 exports.deleteExpense = async (req, res) => {
     const { id } = req.params;
+
+    try {
+        const income = await ExpenseSchema.findByIdAndDelete(id);
+        if (income) {
+            res.status(200).json({ message: 'Income deleted' });
+        } else {
+            res.status(404).json({ message: 'Income not found' });
+        }
+    } catch (err) {
+        res.status(500).json({ message: 'Server error' });
+    }
+};
+
+// exports.deleteExpense = async (req, res) => {
+//     const { id } = req.params;
     
-    ExpenseSchema.findByIdAndDelete(id)
-        .then((income)=>{
-            res.status(200).json({message:'Expensedeleted'})
+//     ExpenseSchema.findByIdAndDelete(id)
+//         .then((income)=>{
+//             res.status(200).json({message:'Expensedeleted'})
 
-        .catch((err)=>{
-            res.status(500).json({message:'server error'}) 
-        })
-    })
+//         .catch((err)=>{
+//             res.status(500).json({message:'server error'}) 
+//         })
+//     })
 
-}
+// }
