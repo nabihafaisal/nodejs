@@ -114,7 +114,7 @@ const FormStyled = styled.form`
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
         color: white;
         &::placeholder{
-            color: rgba(179, 22, 179, 1);
+            color: white
         }
     }
     .input-control{
@@ -127,7 +127,7 @@ const FormStyled = styled.form`
         display: flex;
         justify-content: flex-end;
         select{
-            color: rgba(179, 22, 179, 1);
+            color: white;
             &:focus, &:active{
                 color: rgba(179, 22, 179, 1);
             }
