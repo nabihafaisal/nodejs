@@ -62,9 +62,10 @@ const IncomeStyled = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #FCF6F9;
+         background-color: #111130;
         border: 2px solid #FFFFFF;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+        color: rgba(179, 22, 179, 1);
         border-radius: 20px;
         padding: 1rem;
         margin: 1rem 0;
@@ -79,10 +80,12 @@ const IncomeStyled = styled.div`
     .income-content{
         display: flex;
         gap: 2rem;
+        
         .incomes{
             flex: 1;
         }
     }
+    
 `;
 
 export default Income

@@ -110,7 +110,7 @@ const FormStyled = styled.form`
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
         color: rgba(34, 34, 96, 0.9);
         &::placeholder{
-            color: rgba(34, 34, 96, 0.4);
+            color: rgba(179, 22, 179, 1);
         }
     }
     .input-control{
@@ -123,9 +123,9 @@ const FormStyled = styled.form`
         display: flex;
         justify-content: flex-end;
         select{
-            color: rgba(34, 34, 96, 0.4);
+            color: rgba(179, 22, 179, 1);
             &:focus, &:active{
-                color: rgba(34, 34, 96, 1);
+                color: rgba(179, 22, 179, 1);
             }
         }
     }

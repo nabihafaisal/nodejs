@@ -86,7 +86,7 @@ function IncomeItem({
                             icon={trash}
                             bPad={'1rem'}
                             bRad={'50%'}
-                            bg={'var(--primary-color'}
+                            bg={'#b316b3'}
                             color={'#fff'}
                             iColor={'#fff'}
                             hColor={'var(--color-green)'}
@@ -100,7 +100,7 @@ function IncomeItem({
 }
 
 const IncomeItemStyled = styled.div`
-    background: #FCF6F9;
+    background-color: #111130;
     border: 2px solid #FFFFFF;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
     border-radius: 20px;
@@ -110,12 +110,12 @@ const IncomeItemStyled = styled.div`
     align-items: center;
     gap: 1rem;
     width: 100%;
-    color: #222260;
+    color: #FFF;
     .icon{
         width: 80px;
         height: 80px;
         border-radius: 20px;
-        background: #F5F5F5;
+        background: rgba(179, 22, 179, 1);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -159,7 +159,7 @@ const IncomeItemStyled = styled.div`
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
-                    color: var(--primary-color);
+                    color: #fff;
                     opacity: 0.8;
                 }
             }
