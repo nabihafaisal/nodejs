@@ -80,7 +80,7 @@ export const GlobalProvider = ({ children }) => {
         return totalIncome;
     }
 
-    const totalbalance = ()=>{
+    const totalBalance = ()=>{
         return totalIncome()-totalExpense()
     }
 
@@ -105,7 +105,7 @@ export const GlobalProvider = ({ children }) => {
             getExpense,
             deleteExpense,
             totalExpense,
-            totalbalance,
+            totalBalance,
             Transactionhistory      
         }}>
             {children}

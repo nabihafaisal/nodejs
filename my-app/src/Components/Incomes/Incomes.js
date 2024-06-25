@@ -65,7 +65,7 @@ const IncomeStyled = styled.div`
          background-color: #111130;
         border: 2px solid #FFFFFF;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        color: rgba(179, 22, 179, 1);
+        color: white;
         border-radius: 20px;
         padding: 1rem;
         margin: 1rem 0;

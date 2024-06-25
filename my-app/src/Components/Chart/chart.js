@@ -44,6 +44,7 @@ function Chart() {
                     })
                 ],
                 backgroundColor: 'green',
+                borderColor: 'green',
                 tension: .2
             },
             {
@@ -55,21 +56,42 @@ function Chart() {
                     })
                 ],
                 backgroundColor: 'red',
+                borderColor: 'red',
                 tension: .2
             }
         ]
     }
-
+    const options = {
+        scales: {
+            x: {
+                grid: {
+                    color: 'grey'
+                },
+                ticks: {
+                    color: 'white'// Set y-axis labels color to white
+                }
+            },
+            y: {
+                grid: {
+                    color: 'grey'
+                },
+                ticks: {
+                    color: 'white'// // Set y-axis labels color to white
+                }
+            }
+          
+        }
+    }
 
     return (
         <ChartStyled >
-            <Line data={data} />
+            <Line data={data} options={options} />
         </ChartStyled>
     )
 }
 
 const ChartStyled = styled.div`
-    background: #FCF6F9;
+    background-color: #111130;
     border: 2px solid #FFFFFF;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
     padding: 1rem;

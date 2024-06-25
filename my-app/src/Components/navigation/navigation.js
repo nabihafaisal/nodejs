@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import avatar from '../../images/avatar.jpg'
 import { menuItems } from '../../utils/menuitems'
-import { signout } from '../../utils/icons'
+
 
 
 function Navigation({active, setActive}) {
@@ -20,7 +20,9 @@ function Navigation({active, setActive}) {
                 {menuItems.map((item) => {
                     return <li
                         key={item.id}
-                        onClick={() => setActive(item.id)}
+                        onClick={() => setActive(item.id)
+                            
+                        }
                         className={active === item.id ? 'active': ''}
                     >
                         {item.icon}
@@ -28,11 +30,7 @@ function Navigation({active, setActive}) {
                     </li>
                 })}
             </ul>
-            <div className="bottom-nav">
-                <li>
-                    {signout} Sign Out
-                </li>
-            </div>
+           
         </NavStyled>
     )
 }

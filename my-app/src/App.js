@@ -36,7 +36,7 @@ function App() {
   },[])
 
   return (
-    <AppStyled bg={bg} className="App">
+    <AppStyled  className="App">
       {orbMemo}
       <MainLayout>
         <Navigation active={active} setActive={setActive} />
@@ -50,11 +50,11 @@ function App() {
 
 const AppStyled = styled.div`
   height: 100vh;
-  background-image: url(${props => props.bg});
+  // background-image: url(${props => props.bg});
   position: relative;
   main{
     flex: 1;
-    background: rgba(252, 246, 249, 0.78);
+    background-color: #111130;
     border: 3px solid #FFFFFF;
     backdrop-filter: blur(4.5px);
     border-radius: 32px;

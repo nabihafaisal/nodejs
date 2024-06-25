@@ -8,7 +8,7 @@ import { plus } from "../../utils/icons";
 
 
 function ExpenseForm() {
-    const { addExpense, error, setError } = useGlobalContext()
+    const { addExpense, error } = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -38,6 +38,7 @@ function ExpenseForm() {
 
     return (
         <ExpenseFormStyled onSubmit={handleSubmit}>
+            {error && <p className='error'>{error}</p>}
           
             <div className="input-control">
                 <input
@@ -89,7 +90,7 @@ function ExpenseForm() {
                     icon={plus}
                     bPad={'.8rem 1.6rem'}
                     bRad={'30px'}
-                    bg={'var(--color-accent'}
+                    bg={'#b316b3'}
                     color={'#fff'}
                 />
             </div>
@@ -103,6 +104,7 @@ const ExpenseFormStyled = styled.form`
     flex-direction: column;
     gap: 2rem;
     input, textarea, select{
+         caret-color: white;
         font-family: inherit;
         font-size: inherit;
         outline: none;
@@ -113,9 +115,9 @@ const ExpenseFormStyled = styled.form`
         background: transparent;
         resize: none;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        color: rgba(34, 34, 96, 0.9);
+        color: white;
         &::placeholder{
-            color: rgba(34, 34, 96, 0.4);
+           color: rgba(179, 22, 179, 1);
         }
     }
     .input-control{
@@ -128,9 +130,9 @@ const ExpenseFormStyled = styled.form`
         display: flex;
         justify-content: flex-end;
         select{
-            color: rgba(34, 34, 96, 0.4);
+            color: rgba(179, 22, 179, 1);
             &:focus, &:active{
-                color: rgba(34, 34, 96, 1);
+               color: rgba(179, 22, 179, 1);
             }
         }
     }

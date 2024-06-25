@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 import { plus } from "../../utils/icons";
 
 function Form() {
-    const { addIncome, getIncomes } = useGlobalContext()
+    const { addIncome, getIncomes,error,setError } = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -21,6 +21,7 @@ function Form() {
     const handleInput = name => e => {
         setInputState({ ...inputState, [name]: e.target.value })
        
+       
     }
 
     const handleSubmit = e => {
@@ -32,6 +33,7 @@ function Form() {
 
     return (
         <FormStyled onSubmit={handleSubmit}>
+              {error && <p className='error'>{error}</p>}
         
             <div className="input-control">
                 <input
@@ -83,7 +85,7 @@ function Form() {
                     icon={plus}
                     bPad={'.8rem 1.6rem'}
                     bRad={'30px'}
-                    bg={'var(--color-accent'}
+                    bg={'#b316b3'}
                     color={'#fff'}
                 />
 
@@ -98,6 +100,7 @@ const FormStyled = styled.form`
     flex-direction: column;
     gap: 2rem;
     input, textarea, select{
+         caret-color: white;
         font-family: inherit;
         font-size: inherit;
         outline: none;
@@ -106,9 +109,10 @@ const FormStyled = styled.form`
         border-radius: 5px;
         border: 2px solid #fff;
         background: transparent;
+
         resize: none;
         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        color: rgba(34, 34, 96, 0.9);
+        color: white;
         &::placeholder{
             color: rgba(179, 22, 179, 1);
         }
